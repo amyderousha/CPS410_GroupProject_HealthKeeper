@@ -7,8 +7,7 @@ package healthkeeper;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -28,9 +27,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField txtDrinkPerc;
     @FXML
-    private Button btnAddDrink;
-    @FXML
     private TextField bacTotal;
+    @FXML
+    private ListView drinkList;
+    
+    private ObservableList<String> underlyingDrinkList;
     
     
     @FXML
@@ -41,12 +42,34 @@ public class FXMLDocumentController implements Initializable {
         handler.addDrink(size, percentage);
         bacTotal.setText(String.format("%.3f",handler.calculateBAC()/100) + "%");
         System.out.println(handler.calculateBAC());
+        
+        addToList(size, percentage);
+    }
+    
+    @FXML
+    private void removeDrink(){
+        MultipleSelectionModel selectedItems = drinkList.getSelectionModel();
+        
+        int drinkIndex = selectedItems.getSelectedIndex();
+       
+        System.out.println("The index to be removed is: " + drinkIndex);
+        
+        if(drinkIndex >= 0){
+            underlyingDrinkList.remove(drinkIndex);
+            handler.removeDrink(drinkIndex);
+            bacTotal.setText(String.format("%.3f",handler.calculateBAC()/100) + "%");
+        }
+    }
+    
+    //add drinks to list
+    private void addToList(float size, float percentage){
+        underlyingDrinkList = drinkList.getItems();
+        underlyingDrinkList.add("Size: " + size + ", Percentage: " + percentage + "%");
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
+        // TODO 
     }    
     
 }
