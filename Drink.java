@@ -13,6 +13,8 @@
  * 2. ANY TIME a change is made, updates the alcohol content (changing size/percentage yields recalculation of alcohol content)
  */
 
+package healthkeeper;
+
 
 public class Drink {
 
@@ -40,6 +42,10 @@ public class Drink {
 		this.size = size;
 		setAlcoholContent(this.size, this.percentage);
 	}
+        
+        public float getSize() {
+            return size;
+        }
 	
 	/**
 	 * set method for percentage
@@ -67,5 +73,9 @@ public class Drink {
 	public float getAlcoholContent(){
 		return alcoholContent;
 	}
+        
+        public String toString(){
+            return "Size: " + size + " percentage: " + percentage;
+        }
 
 }
