@@ -1,9 +1,8 @@
-import java.util.LinkedList;
 
 /**
  * @author Tyler Beachnau
- * @since 2/26/2017
- * @version 0.1
+ * @since 4/1/2017
+ * @version 0.2
  * 
  * CPS 410 - Group 1 project - Health Keeper
  * Subprogram: Blood Alcohol Calculator program
@@ -16,6 +15,10 @@ import java.util.LinkedList;
  * 2. Addition and Removal of drinks (including clearing of drink list).
  * 3. Calculation of BAC via all drinks in it's list.
  */
+
+package healthkeeper;
+
+import java.util.LinkedList;
 
 
 public class BACCalculator {
@@ -43,7 +46,11 @@ public class BACCalculator {
 	 * @param index
 	 */
 	public void removeDrink(int index){
-		drinks.remove(index - 1);
+		drinks.remove(index);
+                
+                for(Drink d: drinks){
+                    System.out.println(d);
+                }
 	}
 	
 	/**
