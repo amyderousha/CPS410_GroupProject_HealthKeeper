@@ -27,7 +27,7 @@ public class BACHandler {
 	public BACHandler(){
 		BACCalculator = new BACCalculator();
 		drinkTotal = 0;
-		weight = 0.0f;
+		weight = 68.0f;
 		sex = true;
 		hoursElapsed = 0.0f;
 	}
