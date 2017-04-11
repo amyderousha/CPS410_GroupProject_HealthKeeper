@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="385.0" prefWidth="477.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="healthkeeper.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="btnRemoveDrink" prefHeight="385.0" prefWidth="477.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="healthkeeper.FXMLDocumentController">
   <children>
     <Label layoutX="35.0" layoutY="21.0" text="BAC Calculator">
       <font>
@@ -24,13 +24,14 @@
       </font>
     </Label>
     <TextField fx:id="txtDrinkSize" layoutX="135.0" layoutY="168.0" prefHeight="25.0" prefWidth="38.0" />
-    <Button fx:id="btnAddDrink" layoutX="134.0" layoutY="237.0" mnemonicParsing="false" onAction="#addDrink" text="Add" />
     <TextField fx:id="txtDrinkPerc" layoutX="134.0" layoutY="201.0" prefHeight="25.0" prefWidth="38.0" />
     <Label layoutX="173.0" layoutY="205.0" text="\%" />
     <Label layoutX="92.0" layoutY="172.0" text="Size:" />
     <Label layoutX="34.0" layoutY="205.0" text="Alc. Percentage:" />
-    <TextArea editable="false" focusTraversable="false" layoutX="222.0" layoutY="108.0" prefWidth="200.0" wrapText="true" />
-    <TextField fx:id="bacTotal" alignment="CENTER" editable="false" layoutX="122.0" layoutY="299.0" prefHeight="48.0" prefWidth="65.0" text="" />
     <Label layoutX="45.0" layoutY="315.0" text="BAC TOTAL:" />
+    <TextField fx:id="bacTotal" alignment="CENTER" editable="false" layoutX="122.0" layoutY="299.0" prefHeight="48.0" prefWidth="65.0" text="" />
+    <ListView fx:id="drinkList" editable="false" layoutX="226.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" />
+    <Button fx:id="btnAddDrink" layoutX="134.0" layoutY="237.0" mnemonicParsing="false" onAction="#addDrink" text="Add" />
+    <Button id="btnRemoveDrink" layoutX="279.0" layoutY="323.0" mnemonicParsing="false" onAction="#removeDrink" prefHeight="39.0" text="Remove Drink" />
   </children>
 </AnchorPane>
