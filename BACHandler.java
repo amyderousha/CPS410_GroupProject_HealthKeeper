@@ -1,7 +1,7 @@
 /**
  * 
  * @author Tyler Beachnau
- * @since 2/26/2017
+ * @since 4/11/2017
  * @version 0.1
  * 
  * CPS 410 - Group 1 project - Health Keeper
@@ -16,6 +16,9 @@
  * 3. Calling BACCalculator methods and serving as a source for data for the GUI.
  *
  */
+
+package healthkeeper;
+
 public class BACHandler {
 
 	private BACCalculator BACCalculator;
@@ -27,7 +30,7 @@ public class BACHandler {
 	public BACHandler(){
 		BACCalculator = new BACCalculator();
 		drinkTotal = 0;
-		weight = 68.0f;
+		weight = 68.03f;
 		sex = true;
 		hoursElapsed = 0.0f;
 	}
